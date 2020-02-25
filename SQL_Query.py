@@ -65,6 +65,9 @@ class sqliteObject():
 			try:
 				print(args)
 				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND name = ? ", args)
+				# or
+				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND NAME = ?", args)
+				
 				print('No updates')
 				connectObject.commit()
 				print('time updated..')

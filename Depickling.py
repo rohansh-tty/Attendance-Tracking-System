@@ -9,25 +9,6 @@ import numpy as np
 import pickle
 import face_recognition
 import cv2
-import datetime
-from openpyxl import Workbook
-import xlsxwriter
-
-# create an empty workbook
-book = Workbook()
-sheet = book.active
-
-# create a sheet
-sheet1 = book.create_sheet('Attendance')
-
-# sheet customization
-sheet1['A1'] = 'Name'
-
-# Day, Date and Month Variables
-now = datetime.datetime.now()
-day = now.day
-month = now.month
-
 # List for holding on the names
 empList = []
 
@@ -125,30 +106,3 @@ cv2.destroyAllWindows()
 # Set of Detected image labels
 print(set(empList))
 
-
-''' Excel Data entry feature-----------'''
-#                                      |
-#                                     |
-#                                    |
-#                                   \/
-# # import xlsxwriter module
-# import xlsxwriter
-#
-# workbook = xlsxwriter.Workbook('Example2.xlsx')
-# worksheet = workbook.add_worksheet()
-#
-# # Start from the first cell.
-# # Rows and columns are zero indexed.
-# row = 0
-# column = 0
-#
-# # iterating through content list
-# for item in list(empList):
-#     # write operation perform
-#     worksheet.write(row, column, item)
-#
-#     # incrementing the value of row by one
-#     # with each iteratons.
-#     row += 1
-#
-# workbook.close()

@@ -1,5 +1,4 @@
 # Load all the libraries
-# import pytesseract
 import os
 import cv2
 import time
@@ -40,10 +39,6 @@ print(known_face_names)
 
 
 
-#'{} minutes, {} hours'.format(minutes, hours)
-# greeting = None
-
-
 # main_ dict holding up the detected face names with values as check in time
 main_ = {}
 
@@ -63,12 +58,10 @@ def compliment():
 
 notify = None
 
+# Connect to Employee Database
 import sqlite3
 connectObject = sqlite3.connect('EmployeeCpy1.db')
 crsr = connectObject.cursor()
-
-
-
 
 
 
@@ -92,12 +85,14 @@ def recognizeMe():
     Date = x.strftime("%x")
    
     
-   
+   # Set FaceLocations to 0
     left = right = top = bottom = 0
+
     # Get a reference to webcam #0 (the default one)
     video_capture = cv2.VideoCapture(-1)
     # Set FPS limit to 6
     video_capture.set(cv2.CAP_PROP_FPS, 6) 
+    
     while True:
 
             ret, frame = video_capture.read()
@@ -261,18 +256,6 @@ class GUI(tk.Tk):
         click_recognize = tk.Button(master=self.root, text = 'Recognize Me', height = 3,
                                  bg='Grey', fg = 'Black'  , command= recognizeMe)
         click_recognize.pack(side= 'top')
-
-    # NEW DATASET
-    #click_recognize = tk.Button(master=root, text='New Data',
-     #                           bg='Yellow', command = newImage)
-    #click_recognize.pack(side='top')
-
-# 0------------NOT REQUIRED ---- ADD LATER
-        # click_recognize = tk.Button(master=self.root, text='Exit',
-        #                         bg='Grey', fg = 'Black' ,
-        #                         command = EXIT)
-        # click_recognize.pack(side='bottom')
-
 
     # TIME GREETING
         text = tk.Text(self.root, height = 1, width =30)

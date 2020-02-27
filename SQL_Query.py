@@ -1,3 +1,8 @@
+'''This file contains a sqlite class which includes all the required methods for inserting, updating stuff. 
+
+
+
+
 import sqlite3
 import datetime
 
@@ -61,19 +66,24 @@ class sqliteObject():
 			self.checkoutTime = str(datetime.datetime.now().hour) +':'+ str(datetime.datetime.now().minute)
 			args = (self.checkoutTime, self.name) # list up the data required \
 
-
+			arg1 = self.checkoutTime
+			
+			# No need to use try and except here. Use if you need it.
+			
 			try:
 				print(args)
-				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND name = ? ", args)
-				# or
-				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND NAME = ?", args)
+				# QUERY UPDATES LATEST CHECKOUT TIME
+				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL  ", arg1)
+				
+				# QUERY UPDATES ONLY THE FIRST CHECKOUT TIME
+				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND NAME = ? ", args)
 				
 				print('No updates')
 				connectObject.commit()
 				print('time updated..')
 			except Exception as e:
 				print(e)
-				# connectObject.execute("UPDATE SHEET101 SET checkout = ? WHERE checkout IS NULL ", args)
+				# connectObject.execute("UPDATE SHEET101 SET checkout = ?", args)
 				# connectObject.commit()
 				# connectObject.close() # save changes here
 

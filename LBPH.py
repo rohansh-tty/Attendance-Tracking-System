@@ -1,3 +1,4 @@
+# Load required libraries
 import cv2
 import numpy as np
 import os
@@ -6,10 +7,8 @@ import sys
 import logging as log
 import datetime as dt
 from time import sleep
-print(help(cv2))
 
 cx = 160
-
 cy = 120
 
 # names related to ids: example
@@ -25,7 +24,6 @@ ydeg = 150
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-# log.basicConfig(filename='database.log', level=log.INFO)
 
 # opening the database file using append mode
 # file = open("/home/pi/Testnew/data_log.csv", "a")
@@ -40,8 +38,7 @@ for filename in os.listdir('Dataset'):
     labels.append(int(filename.split('.')[0][0]))
 
 recognizer.train(images, np.array(labels))
-print
-'Training Done . . . '
+print('Training Done . . . ')
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 cap = cv2.VideoCapture(0)
@@ -50,13 +47,6 @@ count = 0
 
 
 file = open("/home/rohan/FacialRecognition/AttendanceSheet - Sheet1.csv", "a")
-#
-# log.info("Date \, Name \n")
-# # file.write("-------------------------------------------------  \n")
-# file.write(str(dt.datetime.now().strftime("%d-%m-%Y"))+"        \n")
-# # file.write("-------------------------------------------------  \n")
-# file.write("Time , Name \n")
-#
 
 while (1):
     ret, frame = cap.read()

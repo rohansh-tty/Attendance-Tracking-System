@@ -9,6 +9,7 @@ import numpy as np
 import pickle
 import face_recognition
 import cv2
+
 # List for holding on the names
 empList = []
 
@@ -64,16 +65,9 @@ while True:
             face_distances = face_recognition.face_distance(all_face_encodings, face_encoding)
             best_match_index = np.argmin(face_distances)
 
-## Try automating the excel data entry feature. ##
-            superIndex = 1
-
             if matches[best_match_index]:  # now just add names to it
-
                 name = face_names[best_match_index]
                 empList.append(name)
-
-            # save the workbook
-            # book.save("sample.xlsx")
 
             # create a box around the face detected
             faces = face_cascade.detectMultiScale(frame,

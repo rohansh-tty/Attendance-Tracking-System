@@ -1,8 +1,6 @@
 '''This file contains a sqlite class which includes all the required methods for inserting, updating stuff. 
 
-
-
-
+# Load reqd libraries
 import sqlite3
 import datetime
 

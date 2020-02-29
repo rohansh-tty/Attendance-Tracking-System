@@ -44,18 +44,6 @@ main_ = {}
 
 currentTime = datetime.datetime.now()
 
-def compliment():
-    hello = 'Hello'
-    if currentTime.hour <= 12:
-        a = 'Good Morning, Have a nice day!'
-    elif currentTime.hour in (12, 16):
-        a = 'Good Afternoon, Have a nice day!'
-    elif currentTime.hour > 16:
-        a = 'Good Evening, Have a nice day!'   
-    return a
-
-
-
 notify = None
 
 # Connect to Employee Database

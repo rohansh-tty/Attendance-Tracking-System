@@ -13,9 +13,12 @@ import cv2
 # List for holding on the names
 empList = []
 
+# clone the opencv github repo, goto data--> haarcascades--> haarcascade_frontalface_default.xml
+
+
 # create face cascade classifier
 face_cascade = cv2.CascadeClassifier(
-    '/home/rohan/PycharmProjects/OpenCV/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
+    'add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
 
 # Loading the dataset pickle and comparing the face encodings
 

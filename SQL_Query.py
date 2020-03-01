@@ -1,4 +1,4 @@
-'''This file contains a sqlite class which includes all the required methods for inserting, updating stuff. 
+'''This file contains a sqlite class which includes all the required methods for inserting, updating stuff.''' 
 
 # Load reqd libraries
 import sqlite3
@@ -19,7 +19,6 @@ class sqliteObject():
 	DB_Location = "/home/rohan/Desktop/Prototype1-FaceRec/Emp.db"
 
 	def __init__ (self):
-		
 		# tablename = 'sheet15'
 		# self.database = database
 		self.connect = sqlite3.connect(sqliteObject.DB_Location)
@@ -72,10 +71,8 @@ class sqliteObject():
 				print(args)
 				# QUERY UPDATES LATEST CHECKOUT TIME
 				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL  ", arg1)
-				
 				# QUERY UPDATES ONLY THE FIRST CHECKOUT TIME
 				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND NAME = ? ", args)
-				
 				print('No updates')
 				connectObject.commit()
 				print('time updated..')

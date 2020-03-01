@@ -3,7 +3,6 @@ import os
 import cv2
 import time
 import pickle
-import argparse
 import datetime
 import numpy as np
 import tkinter as tk
@@ -75,7 +74,6 @@ def recognizeMe():
     
    # Set FaceLocations to 0
     left = right = top = bottom = 0
-
     # Get a reference to webcam #0 (the default one)
     video_capture = cv2.VideoCapture(-1)
     # Set FPS limit to 6
@@ -84,16 +82,12 @@ def recognizeMe():
     while True:
 
             ret, frame = video_capture.read()
-
             frame = cv2.resize(frame, (0, 0), fx=0.40, fy=0.40)
-
     # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
             rgb_frame = frame[:, :, ::-1]
-
     # Find all the faces and face enqcodings in the frame of video
             face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample = 2)
             face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
-
     # Loop through each face in this frame of video
             for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
         # See if the faqce is a match for the known face(s)

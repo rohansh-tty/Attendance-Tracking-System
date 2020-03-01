@@ -5,11 +5,11 @@
   All_face_encodings consists of keys which contains all images and their respective encodings is appended as values.'''
 
 # load all the required libraries
-
 import face_recognition
 import pickle
 import os
 import cv2
+
 
 # create an empty dict and list, to store encodings and images
 all_face_encodings = {}
@@ -21,13 +21,10 @@ for filename in os.listdir('NewTest'):
     im = face_recognition.load_image_file('NewTest/' + filename, 0)
     all_face_encodings[filename.split('.')[0]] = face_recognition.face_encodings(im)[0]
     images.append(im)
-
     rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
-
 # detect the (x, y)-coordinates of the bounding boxes
 # corresponding to each face in the input image
     boxes = face_recognition.face_locations(rgb)
-
 # compute the facial embedding for the face
     encodings = face_recognition.face_encodings(rgb, boxes)
     print(encodings)

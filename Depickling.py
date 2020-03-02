@@ -64,11 +64,10 @@ while True:
             matches = face_recognition.compare_faces(all_face_encodings, face_encoding)
             name = "Unknown"
 
-            # use the known face with the smallest distance to the new face
             face_distances = face_recognition.face_distance(all_face_encodings, face_encoding)
             best_match_index = np.argmin(face_distances)
 
-            if matches[best_match_index]:  # now just add names to it
+            if matches[best_match_index]:  #
                 name = face_names[best_match_index]
                 empList.append(name)
 

@@ -46,8 +46,6 @@ lastRes = ''
 count = 0
 
 
-file = open("/home/rohan/FacialRecognition/AttendanceSheet - Sheet1.csv", "a")
-
 while (1):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)

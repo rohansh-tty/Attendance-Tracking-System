@@ -82,7 +82,7 @@ def recognizeMe():
     while True:
 
             ret, frame = video_capture.read()
-            frame = cv2.resize(frame, (0, 0), fx=0.40, fy=0.40)
+            frame = cv2.resize(frame, (0, 0), fx=0.45, fy=0.45)
     # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
             rgb_frame = frame[:, :, ::-1]
     # Find all the faces and face enqcodings in the frame of video
@@ -145,7 +145,7 @@ def recognizeMe():
                         cv2.destroyAllWindows()
                     # notification
                         tkinter.messagebox.showinfo('Notification',
-                                                str(name) + ' your attendance has been recorded in the DB.\nThank You!')
+                                                str(name) + ' detected!')
                         if cv2.waitKey(5000):
                             break
                     
@@ -164,7 +164,7 @@ def recognizeMe():
                     cv2.destroyAllWindows()
                     # notification
                     tkinter.messagebox.showinfo('Notification',
-                                                'No face detected.\nPlease try again or \ntry contacting AI Team.\nThank You!')
+                                                'No face detected.')
                     if cv2.waitKey(5000):
                         break    # Hit 'q' on the keyboard to quit!
             if cv2.waitKey(1000):
@@ -217,17 +217,16 @@ class GUI(tk.Tk):
 
     def tkWindow(self):
 
-        tk.Label(self.root, text = 'Makonis Software Solutions', bg= 'Blue', height = 5, width = 40).pack(side = 'top')
-        tk.Label(self.root, text = 'Attendance System').pack(side = 'bottom')
+        tk.Label(self.root, text = 'FaceRec', bg= 'Blue', height = 5, width = 40).pack(side = 'top')
         r = tk.Entry(self.root)
-        self.root.title('Attendance System ---- Face Recognition ')
+        self.root.title(' Face Recognition ')
         r.focus_set()
 
         #------------ Logo
-            
-        filename = ImageTk.PhotoImage(Image.open('index.png' ))
-        background_label = tk.Label(self.root, image=filename)
-        background_label.place(x=0, y=0, relwidth=1, relheight=1)
+  # if you want to add any image
+       # filename = ImageTk.PhotoImage(Image.open('index.png' ))
+        #background_label = tk.Label(self.root, image=filename)
+        #background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
 

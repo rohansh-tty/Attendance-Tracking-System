@@ -1,7 +1,5 @@
-#change the directory
-import os
-
 # Load all the libraries
+import os
 import cv2
 import time
 import pickle

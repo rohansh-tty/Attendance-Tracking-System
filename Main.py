@@ -70,7 +70,6 @@ x = None
 
 # sqlite object
 SQLITE = sqliteObject()
-
 # this creates a new table called newSheet 
 SQLITE.createTable()
 
@@ -85,8 +84,6 @@ checkIn = []
 
 # MAIN BUTTON: Recognize Me(Face Recognition Function)
 def recognizeMe():
-    
-
     # checkoutTime by default set to NONE
 	checkoutTime = None
 
@@ -116,10 +113,10 @@ def recognizeMe():
 			for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
         # See if the faqce is a match for the known face(s)
 				matches = face_recognition.compare_faces(all_face_encodings, face_encoding)
-    # Draw a box around the face
+    				# Draw a box around the face
 				cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 1)
 				name = "Unknown"
-        # Or instead, use the known face with the smallest distance to the new face
+        			# Or instead, use the known face with the smallest distance to the new face
 				face_distances = face_recognition.face_distance(all_face_encodings, face_encoding)
 				best_match_index = np.argmin(face_distances)
                 
@@ -128,7 +125,7 @@ def recognizeMe():
 					name = known_face_names[best_match_index]
 					SQLITE.name = name # ----------------------------------------------------------- name
                    
-                    # append recognized face name to checkIn if not already present
+                    			# append recognized face name to checkIn if not already present
 					if name not in checkIn:
 						checkIn.append(name)
 						SQLITE.checkout = None# -------------------------------------------CHECKOUT-TIME
@@ -154,11 +151,9 @@ def recognizeMe():
 							SQLITE.ID = len(checkIn)#-------------------------------------------------ID
 							SQLITE.insertData(SQLITE.ID, SQLITE.Date, SQLITE.name, SQLITE.checkin, SQLITE.checkout)# -----------------------------------------insertData()
 							print('Data Inserted Successfully...')
-                            # insertData(1, Date, name, main_[name], checkoutTime)    
-                            # crsr.execute("SELECT *
-
-                        #print(main_)
-          # Draw a label with a name below the face
+                            				# insertData(1, Date, name, main_[name], checkoutTime)    
+                           
+          						# Draw a label with a name below the face
 						except Exception as e:
 							print(e)
                             
@@ -182,17 +177,17 @@ def recognizeMe():
                     
 
 				else:
-                    # By default set the name to Unknown
+                                       # By default set the name to Unknown
 					name = 'Unknown'
 					cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
 					font = cv2.FONT_HERSHEY_DUPLEX
 					cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
-                   # show the detected frame
+                                       # show the detected frame
 					cv2.imshow('Video', frame)
-                    # hold it for 2 secs
+                                       # hold it for 2 secs
 					cv2.waitKey(2000)
 					cv2.destroyAllWindows()
-                    # notification
+                                       # notification
 					tkinter.messagebox.showinfo('Notification',
                                                 'No face detected.\nPlease try again or \ntry contacting AI Team.\nThank You!')
 					if cv2.waitKey(5000):

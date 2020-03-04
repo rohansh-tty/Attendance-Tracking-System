@@ -41,11 +41,11 @@ class sqliteObject():
 #-------------------------------------------------COMMENTED CONNECT FUNCTION BCOZ I HAD INSERTED THE SAME CODE UNDER INIT METHOD
 
 # connect function - connects the database mentioned
-	# def connect(self):
-	# 	self.connect = sqlite3.connect(self.database)
-	# 	self.cursor = self.connect.cursor()
-	# 	# self.connect.execute("PRAGMA journal_mode=WAL") # to improve concurrency
-	# 	self.connected = True
+	def connect(self):
+		self.connect = sqlite3.connect(self.database)
+		self.cursor = self.connect.cursor()
+		# self.connect.execute("PRAGMA journal_mode=WAL") # to improve concurrency
+		self.connected = True
 
 # close - commits any changes and closes the same
 	def close(self):	

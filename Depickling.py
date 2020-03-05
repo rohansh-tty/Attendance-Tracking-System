@@ -20,7 +20,6 @@ empList = []
 face_cascade = cv2.CascadeClassifier(
     'add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
 
-# Loading the dataset pickle and comparing the face encodings
 
 # read the pickle file
 with open('dataset_faces.pickle', "rb") as f:
@@ -88,7 +87,7 @@ while True:
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, name, (left, right), font, 1.0, (0, 0, 255), 1)
 
-    # Display the resulting image
+   
     cv2.imshow('Video', frame)
 
     # Hit 'q' on the keyboard to quit!

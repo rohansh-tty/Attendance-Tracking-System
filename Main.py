@@ -286,22 +286,6 @@ class GUI(tk.Tk):
         # click_button = Button(master=self.root, text='Start',
         #                    bg='Black', fg = 'White' , command=name_portal)
         # click_button.pack(side="top")
-
-# 0------------NOT REQUIRED ---- ADD LATER
-
-    # def name_portal():
-    #     def save_name():
-    #         name=e.get()
-    #         print( name+" is Saved with us.")  
-    #         newImage(name)
-   
-   
-    # def EXIT():
-    #     try:
-    #         cv2.destroyAllWindows()
-    #     except Exception as e:
-    #         print(e)
-#name_portal()
 attendanceApp = GUI()
 attendanceApp.tkWindow()
 # recognizeMe()

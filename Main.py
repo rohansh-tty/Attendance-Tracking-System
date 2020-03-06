@@ -200,29 +200,6 @@ def recognizeMe():
 	cv2.destroyAllWindows()
 
 
-# NEW IMAGE FUNCTION()
-def newImage(name):
-        video_capture = cv2.VideoCapture(-1)
-        while True:
-        # Grab a single frame of video
-            ret, frame = video_capture.read()
-            rgb_frame = frame[:, :, ::-1]
-            #cv2.imshow('NewFace', frame)
-            face_locations = face_recognition.face_locations(rgb_frame)
-            
-            for top, right, bottom, left in face_locations:
-                cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-                newpath = f'/home/pi/Prototype1-FaceRec/Dataset/{name}'
-                #if not os.path.exists(newpath):
-                 #   os.makedirs(newpath)
-    
-                for i in range(1, 2):
-                    ret, frame = video_capture.read()
-                    #time.sleep(3)
-                    img_name = "{}.png".format(i)
-                    path = f'/home/pi/Prototype1-FaceRec/Dataset/{name}'
-                    cv2.imwrite(os.path.join(path, img_name), frame)
-                    print("{} written!".format(img_name))
 # for digital clock
 time1 = ''
                 

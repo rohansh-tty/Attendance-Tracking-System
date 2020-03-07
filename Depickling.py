@@ -21,7 +21,7 @@ face_cascade = cv2.CascadeClassifier(
     'add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
 
 
-# read the pickle file
+# load and read the pickle file
 with open('dataset_faces.pickle', "rb") as f:
     unpickler = pickle.Unpickler(f)
     all_face_encodings = unpickler.load()
@@ -97,7 +97,4 @@ while True:
 # Release handle to the webcam
 video.release()
 cv2.destroyAllWindows()
-
-# Set of Detected image labels
-print(set(empList))
 

@@ -1,4 +1,5 @@
-# Load required libraries
+# LBPH Algorithm Code(Machine Learning) 
+#Load required libraries
 import cv2
 import numpy as np
 import os

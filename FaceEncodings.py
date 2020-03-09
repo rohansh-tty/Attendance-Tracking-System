@@ -29,7 +29,7 @@ for filename in os.listdir('Dataset'):
 
 # compute the facial embedding for the face
         encodings = face_recognition.face_encodings(rgb, boxes)
-        #print(encodings)
+        
 # loop over the encodings
         for encoding in encodings:
             all_face_encodings[filename.split('.')[0]] = encoding

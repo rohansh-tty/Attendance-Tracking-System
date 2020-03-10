@@ -101,7 +101,6 @@ def recognizeMe():
                 face_distances = face_recognition.face_distance(all_face_encodings, face_encoding)
                 best_match_index = np.argmin(face_distances)
                 if matches[best_match_index]:
-
                     name = known_face_names[best_match_index]
 
                     # append recognized face name to checkIn if not already present
@@ -159,7 +158,6 @@ def recognizeMe():
                     cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
                    # show the detected frame
                     cv2.imshow('Video', frame)
-                    # hold it for 2 secs
                     cv2.waitKey(2000)
                     cv2.destroyAllWindows()
                     # notification

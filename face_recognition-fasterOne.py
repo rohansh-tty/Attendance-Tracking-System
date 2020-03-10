@@ -18,7 +18,6 @@ video_capture = cv2.VideoCapture(0)
 obama_image = face_recognition.load_image_file("obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
-# Load a second sample picture and learn how to recognize it.
 biden_image = face_recognition.load_image_file("biden.jpg")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
@@ -39,7 +38,7 @@ face_names = []
 process_this_frame = True
 
 while True:
-    # Grab a single frame of video
+   
     ret, frame = video_capture.read()
 
     # Resize frame of video to 1/4 size for faster face recognition processing
@@ -50,7 +49,6 @@ while True:
 
     # Only process every other frame of video to save time
     if process_this_frame:
-        # Find all the faces and face encodings in the current frame of video
         face_locations = face_recognition.face_locations(rgb_small_frame)
         face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
 

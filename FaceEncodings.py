@@ -8,7 +8,6 @@ import os
 
 # grab the paths to the input images in our dataset
 print("[INFO] quantifying faces...")
-
     
 # create an empty dict and list, to store encodings and images
 all_face_encodings = {}
@@ -41,4 +40,3 @@ for filename in os.listdir('Dataset'):
 with open('newfaceEncoding.pickle', 'wb') as f:
             pickle.dump(all_face_encodings, f)
 print('New Pickle file saved...')
-# return all_face_encodings

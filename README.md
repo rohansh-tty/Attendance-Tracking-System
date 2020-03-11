@@ -7,8 +7,8 @@ Project Specifications:
 Programming Language: Python 3.7
 Database: sqlite3
 Camera: Raspberry PI Camera Module
-
-For Face Recognition, I have used Python library called as face_recognition. You can find its repo here
+ 
+Using OpenCV library, I have detected face/s in video frame. For Face Recognition, I have used a Python library called as face_recognition. You can find its repo here.
 https://github.com/ageitgey/face_recognition
 
 

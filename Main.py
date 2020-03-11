@@ -288,8 +288,6 @@ class GUI(tk.Tk):
         # click_button.pack(side="top")
 attendanceApp = GUI()
 attendanceApp.tkWindow()
-# recognizeMe()
-# root.mainloop()
 
 # this is the infinite loop that helps in running the GUI application
 

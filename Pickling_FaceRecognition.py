@@ -25,7 +25,6 @@ for filename in os.listdir('NewTest'):
 
     # detect the (x, y)-coordinates of the bounding boxes
     boxes = face_recognition.face_locations(rgb)
-# compute the facial embedding for the face
     encodings = face_recognition.face_encodings(rgb, boxes)
     print(encodings)
   

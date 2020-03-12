@@ -16,7 +16,7 @@ x = None
 
 class sqliteObject():
 
-	DB_Location = "/home/rohan/Desktop/Prototype1-FaceRec/Emp.db"
+	DB_Location = "/database/location/Emp.db"
 
 	def __init__ (self):
 		# tablename = 'sheet15'

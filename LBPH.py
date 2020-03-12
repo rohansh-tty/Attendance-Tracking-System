@@ -72,7 +72,6 @@ while (1):
         cv2.putText(frame, str(id), (x + 5, y - 5), font, 1, (255, 255, 255), 2)
         cv2.putText(frame, str(confidence), (x + 5, y + h - 5), font, 1, (255, 255, 0), 1)
 
-        # cv2.putText( frame, str(lastRes), ( x, y ), cv2.FONT_HERSHEY_SIMPLEX, 0.5, ( 0, 0, 255 ), 2 )
 
     cv2.imshow('frame', frame)
     k = 0xFF & cv2.waitKey(10)

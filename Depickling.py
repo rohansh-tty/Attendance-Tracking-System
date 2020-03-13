@@ -51,7 +51,6 @@ while True:
     # Find all the faces and face encodings in the frame of video
     if process_this_frame:
 
-         # Get the face location and its encodings
 
         face_locations = face_recognition.face_locations(rgb_frame)  # face locations
         face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)  # face encodings
@@ -81,9 +80,6 @@ while True:
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 0), 1)
 
                 # Draw a label with a name below the face
-
-                # cv2.rectangle(frame, (left+10, bottom-10), (right,bottom), (0, 255, 0), cv2.FILLED)
-
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, name, (left, right), font, 1.0, (0, 0, 255), 1)
 

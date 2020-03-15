@@ -12,7 +12,6 @@ import tkinter.messagebox
 from PIL import ImageTk, Image
 
 
-
 #import faceEncoding() from PiCameraTest
 from FaceEncodings import addNewFace
 
@@ -80,7 +79,6 @@ def recognizeMe():
     video_capture.set(cv2.CAP_PROP_FPS, 6) 
     
     while True:
-
             ret, frame = video_capture.read()
             frame = cv2.resize(frame, (0, 0), fx=0.45, fy=0.45)
     # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
@@ -147,7 +145,6 @@ def recognizeMe():
                                                 str(name) + ' detected!')
                         if cv2.waitKey(5000):
                             break
-                    
                     
 
             else:

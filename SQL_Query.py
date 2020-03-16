@@ -10,7 +10,7 @@ connectObject = sqlite3.connect('Emp.db')
 global crsr
 crsr = connectObject.cursor()
 
-
+# set checkoutTime to None
 checkoutTime = None
 x = None
 
@@ -78,10 +78,7 @@ class sqliteObject():
 				print('time updated..')
 			except Exception as e:
 				print(e)
-				# connectObject.execute("UPDATE SHEET101 SET checkout = ?", args)
-				# connectObject.commit()
-				# connectObject.close() # save changes here
-
+				
 
 	def insertData(self, ID, Date, name, checkin, checkout):
 		self.ID = ID

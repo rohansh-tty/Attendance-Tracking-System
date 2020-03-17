@@ -23,7 +23,6 @@ for filename in os.listdir('NewTest'):
     images.append(im)
     rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
-    # detect the (x, y)-coordinates of the bounding boxes
     boxes = face_recognition.face_locations(rgb)
     encodings = face_recognition.face_encodings(rgb, boxes)
     print(encodings)

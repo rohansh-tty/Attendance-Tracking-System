@@ -20,6 +20,7 @@ for filename in os.listdir('Dataset'):
         images.append(im)
 
     # image = cv2.imread(im,1)
+    # convert the image frame to RGB from BGR(Inverse)
         rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
 # detect the (x, y)-coordinates of the bounding boxes

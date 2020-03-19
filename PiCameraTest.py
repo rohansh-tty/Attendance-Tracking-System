@@ -2,6 +2,7 @@
 import os
 import cv2
 import time
+import sqlite3
 import pickle
 import datetime
 import numpy as np
@@ -44,8 +45,7 @@ currentTime = datetime.datetime.now()
 
 notify = None
 
-# Connect to Employee Database
-import sqlite3
+
 connectObject = sqlite3.connect('EmployeeCpy1.db')
 crsr = connectObject.cursor()
 
@@ -61,8 +61,6 @@ checkIn = []
 
 # MAIN BUTTON: Recognize Me(Face Recognition Function)
 def recognizeMe():
-    
-
     # checkoutTime by default set to NONE
     checkoutTime = None
 
@@ -70,11 +68,12 @@ def recognizeMe():
     x = datetime.datetime.now()
     Date = x.strftime("%x")
    
-    
    # Set FaceLocations to 0
     left = right = top = bottom = 0
+   
     # Get a reference to webcam #0 (the default one)
     video_capture = cv2.VideoCapture(-1)
+    
     # Set FPS limit to 6
     video_capture.set(cv2.CAP_PROP_FPS, 6) 
     

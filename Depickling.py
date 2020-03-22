@@ -10,7 +10,7 @@ import pickle
 import face_recognition
 import cv2
 
-# List for holding on the names
+# List for holding on the detected faces
 empList = []
 
 # clone the opencv github repo, goto data--> haarcascades--> haarcascade_frontalface_default.xml
@@ -21,7 +21,7 @@ face_cascade = cv2.CascadeClassifier(
     'add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
 
 
-# load and read the pickle file
+# load and read the pickle file with face encodings
 with open('dataset_faces.pickle', "rb") as f:
     unpickler = pickle.Unpickler(f)
     all_face_encodings = unpickler.load()
@@ -50,8 +50,6 @@ while True:
 
     # Find all the faces and face encodings in the frame of video
     if process_this_frame:
-
-
         face_locations = face_recognition.face_locations(rgb_frame)  # face locations
         face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)  # face encodings
 

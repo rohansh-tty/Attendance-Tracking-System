@@ -15,11 +15,9 @@ checkoutTime = None
 x = None
 
 class sqliteObject():
-
 	DB_Location = "/database/location/Emp.db"
-
 	def __init__ (self):
-		# tablename = 'sheet15'
+		# tablename = 'sheetname'
 		# self.database = database
 		self.connect = sqlite3.connect(sqliteObject.DB_Location)
 		self.cursor = self.connect.cursor()
@@ -53,7 +51,6 @@ class sqliteObject():
 		self.connect.close()
 		self.connected = False
 
-
 	def updateCheckout(self, name, checkoutTime):
 		self.checkoutTime = checkoutTime
 		self.name = name	
@@ -62,7 +59,6 @@ class sqliteObject():
 		else:
 			self.checkoutTime = str(datetime.datetime.now().hour) +':'+ str(datetime.datetime.now().minute)
 			args = (self.checkoutTime, self.name) # list up the data required \
-
 			arg1 = self.checkoutTime
 			
 			# No need to use try and except here. Use if you need it.

@@ -23,12 +23,12 @@ biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
-    biden_face_encoding
-]
+    biden_face_encoding]
+
+#create an array of known face names
 known_face_names = [
     "Barack Obama",
-    "Joe Biden"
-]
+    "Joe Biden"]
 
 # Initialize some variables
 face_locations = []

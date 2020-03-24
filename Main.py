@@ -252,17 +252,6 @@ class GUI(tk.Tk):
         #                         command = EXIT)
         # click_recognize.pack(side='bottom')
 
-
-    # TIME GREETING
-    #     text = tk.Text(self.root, height = 2, width =32, bg = 'mint cream', fg='black')
-
-    # # T = tk.Text(root, height=10, width=30)
-    #     text.pack()
-    #     TimeGreeting = compliment()
-    #     text.insert(tk.END, TimeGreeting)
-    #     text.pack(side = 'top')
-    
-    #     # mainloop here, shift to bottom later
         self.root.mainloop()
 
 

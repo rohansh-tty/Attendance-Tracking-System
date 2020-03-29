@@ -92,7 +92,6 @@ def recognizeMe():
 	while True:
 			ret, frame = video_capture.read()
 			frame = cv2.resize(frame, (0, 0), fx=0.40, fy=0.40)
-    # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
 			rgb_frame = frame[:, :, ::-1]
     # Find all the faces and face enqcodings in the frame of video
 			face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample = 2)
@@ -137,7 +136,6 @@ def recognizeMe():
            
 # Inserts data into the Attendance Table in Employee Database
 						try:
-							print('Try Block')
 							SQLITE.ID = len(checkIn)#-------------------------------------------------ID
 							SQLITE.insertData(SQLITE.ID, SQLITE.Date, SQLITE.name, SQLITE.checkin, SQLITE.checkout)# -----------------------------------------insertData()
 							print('Data Inserted Successfully...')

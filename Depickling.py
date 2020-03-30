@@ -10,9 +10,6 @@ import pickle
 import face_recognition
 import cv2
 
-# List for holding on the detected faces
-empList = []
-
 # clone the opencv github repo, goto data--> haarcascades--> haarcascade_frontalface_default.xml
 
 
@@ -65,8 +62,7 @@ while True:
 
             if matches[best_match_index]:  #
                 name = face_names[best_match_index]
-                empList.append(name)
-
+          
             # create a box around the face detected
             faces = face_cascade.detectMultiScale(frame,
                                                   scaleFactor=1.05,

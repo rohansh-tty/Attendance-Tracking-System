@@ -19,8 +19,10 @@ class sqliteObject():
 	def __init__ (self):
 		# tablename = 'sheetname'
 		# self.database = database
+		
 		self.connect = sqlite3.connect(sqliteObject.DB_Location)
 		self.cursor = self.connect.cursor()
+		
 		# self.connect.execute("PRAGMA journal_mode=WAL") # to improve concurrency
 		self.connected = True
 
@@ -42,6 +44,7 @@ class sqliteObject():
 	def connect(self):
 		self.connect = sqlite3.connect(self.database)
 		self.cursor = self.connect.cursor()
+		
 		# self.connect.execute("PRAGMA journal_mode=WAL") # to improve concurrency
 		self.connected = True
 
@@ -61,17 +64,20 @@ class sqliteObject():
 			args = (self.checkoutTime, self.name) # list up the data required \
 			arg1 = self.checkoutTime
 			
-			# No need to use try and except here. Use if you need it.
-			
+			# No need to use try and except here. Use if you need it.	
 			try:
 				print(args)
+				
 				# QUERY UPDATES LATEST CHECKOUT TIME
 				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL  ", arg1)
+				
 				# QUERY UPDATES ONLY THE FIRST CHECKOUT TIME
 				connectObject.execute("UPDATE SHEET60 SET checkout = ? WHERE checkout IS NULL AND NAME = ? ", args)
+				
 				print('No updates')
 				connectObject.commit()
 				print('time updated..')
+			
 			except Exception as e:
 				print(e)
 				
@@ -85,6 +91,7 @@ class sqliteObject():
 
 		if not self.connected:
 			self.connect()
+		
 		else:
 			x = datetime.datetime.today() 
 			Date = x.strftime("%d-%m-%Y")

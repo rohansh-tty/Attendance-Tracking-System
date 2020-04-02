@@ -22,6 +22,7 @@ from InsertData import insertData
 # import updateData() fro UpdateData.py file
 from UpdateData import updateCheckout
 
+
 st = ""
 face_locations = []
 
@@ -124,7 +125,6 @@ def recognizeMe():
                             print(crsr.fetchall())
                             print(checkIn)
                         
-                        #print(main_)
           # Draw a label with a name below the face
                         except Exception as e:
                             print(e)
@@ -136,9 +136,11 @@ def recognizeMe():
 
                     # show the detected frame
                         cv2.imshow('Video', frame)
+                        
                     # hold it for 2 secs
                         cv2.waitKey(2000)
                         cv2.destroyAllWindows()
+                        
                     # notification
                         tkinter.messagebox.showinfo('Notification',
                                                 str(name) + ' detected!')
@@ -173,21 +175,26 @@ def recognizeMe():
 def newImage(name):
         video_capture = cv2.VideoCapture(-1)
         while True:
+            
         # Grab a single frame of video
             ret, frame = video_capture.read()
             rgb_frame = frame[:, :, ::-1]
+            
             #cv2.imshow('NewFace', frame)
             face_locations = face_recognition.face_locations(rgb_frame)
             
             for top, right, bottom, left in face_locations:
                 cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
                 newpath = f'/home/pi/Prototype1-FaceRec/Dataset/{name}'
+                
                 #if not os.path.exists(newpath):
                  #   os.makedirs(newpath)
                 for i in range(1, 2):
                     ret, frame = video_capture.read()
+                    
                     #time.sleep(3)
                     img_name = "{}.png".format(i)
+                    
                     path = f'/home/pi/Prototype1-FaceRec/Dataset/{name}'
                     cv2.imwrite(os.path.join(path, img_name), frame)
                     print("{} written!".format(img_name))
@@ -216,15 +223,6 @@ class GUI(tk.Tk):
         self.root.title(' Face Recognition ')
         r.focus_set()
 
-        #------------ Logo
-  # if you want to add any image
-       # filename = ImageTk.PhotoImage(Image.open('index.png' ))
-        #background_label = tk.Label(self.root, image=filename)
-        #background_label.place(x=0, y=0, relwidth=1, relheight=1)
-
-
-
-
 
 
     # RECOGNIZE ME BUTTON
@@ -232,15 +230,6 @@ class GUI(tk.Tk):
                                  bg='Grey', fg = 'Black'  , command= recognizeMe)
         click_recognize.pack(side= 'top')
 
-    # TIME GREETING
-        text = tk.Text(self.root, height = 1, width =30)
-
-    # T = tk.Text(root, height=10, width=30)
-        text.pack()
-        TimeGreeting = compliment()
-        text.insert(tk.END, TimeGreeting)
-        text.pack(side = 'top')
-    
         # mainloop here, shift to bottom later
         self.root.mainloop()
 

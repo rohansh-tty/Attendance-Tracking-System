@@ -93,12 +93,12 @@ def recognizeMe():
 			ret, frame = video_capture.read()
 			frame = cv2.resize(frame, (0, 0), fx=0.40, fy=0.40)
 			rgb_frame = frame[:, :, ::-1]
+			
     # Find all the faces and face enqcodings in the frame of video
 			face_locations = face_recognition.face_locations(rgb_frame, number_of_times_to_upsample = 2)
 			face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
 
-    # Loop through each face in this frame of video
 			for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
         # See if the faqce is a match for the known face(s)
 				matches = face_recognition.compare_faces(all_face_encodings, face_encoding)
@@ -155,7 +155,7 @@ def recognizeMe():
                     # hold it for 2 secs
 						cv2.waitKey(2000)
 						cv2.destroyAllWindows()
-                    # notification
+                    # Confirmation Notification
 						
 						tkinter.messagebox.showinfo('Notification',
                                                 str(name) + ' your attendance has been recorded in the DB.\nThank You!')
@@ -188,7 +188,7 @@ def recognizeMe():
 	cv2.destroyAllWindows()
 
 
-# for digital clock
+# for digital clock in Main Screen
 time1 = ''
                 
                 

@@ -10,12 +10,11 @@ import pickle
 import face_recognition
 import cv2
 
-# clone the opencv github repo, goto data--> haarcascades --> haarcascade_frontalface_default.xml
+# clone the opencv github repo, goto data --> haarcascades --> haarcascade_frontalface_default.xml
 
 
 # create face cascade classifier
-face_cascade = cv2.CascadeClassifier(
-    'add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('add-your-path/opencv-master/data/haarcascades/haarcascade_frontalface_default.xml')
 
 
 # load and read the pickle file with face encodings

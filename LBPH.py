@@ -1,4 +1,7 @@
 # LBPH Algorithm Code(Machine Learning) 
+
+# Implementation of Local Binary Pattern Histogram Algorithm for Face Recognition
+
 #Load required libraries
 import cv2
 import numpy as np

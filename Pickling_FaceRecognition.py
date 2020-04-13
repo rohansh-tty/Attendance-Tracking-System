@@ -26,7 +26,6 @@ for filename in os.listdir('NewTest'):
 
     boxes = face_recognition.face_locations(rgb)
     encodings = face_recognition.face_encodings(rgb, boxes)
-    print(encodings)
   
 # loop over the encodings
     for encoding in encodings:

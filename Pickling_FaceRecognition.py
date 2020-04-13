@@ -15,7 +15,6 @@ import cv2
 all_face_encodings = {}
 images = []
 
-#all_face_encodings = {name1: encoding1, name2: encoding2, ... }
 
 # now loop over the directory and get the face_encodings of diff images
 for filename in os.listdir('NewTest'):

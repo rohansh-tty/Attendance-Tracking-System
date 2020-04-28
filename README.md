@@ -2,7 +2,7 @@
 
 Here I tried to build a Face Recognition System(FRS) on Raspberry Pi using OpenCV, PIL etc. Nowadays running a FR Model on PC's is easy due to the available of GPU's. But when running them on IOT and Mobile Devices, one has to overcome a lot of exceptions.
 
-***Project Specifications:**
+**Project Specifications:**
 
 *Programming Language: Python 3.7
 *Database: sqlite3

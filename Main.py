@@ -210,7 +210,7 @@ class GUI(tk.Tk):
 
     def tkWindow(self):
 
-        l1 =tk.Label(master=self.root, text = 'Makonis Software Solutions', bg= 'Blue').pack()#, height = 1, width = 40)#.pack(side = 'top')
+        l1 =tk.Label(master=self.root, text = 'ABC Software Solutions', bg= 'Blue').pack()#, height = 1, width = 40)#.pack(side = 'top')
         # l1.place(x=260, y=90)
         # tk.Label(self.root, text = 'Attendance System').pack(side = 'bottom')
         r = tk.Entry(self.root)
@@ -219,7 +219,7 @@ class GUI(tk.Tk):
 
         #------------ Logo
             
-        filename = ImageTk.PhotoImage(Image.open('logo.jpeg' ))
+        filename = ImageTk.PhotoImage(Image.open('abc.jpeg' ))
         background_label = tk.Label(self.root, image=filename)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 

@@ -225,7 +225,7 @@ class GUI(tk.Tk):
 
 
         # Makonis Label
-        text = tk.Label(self.root, text="Makonis Software Solutions", height = 5, font = 'TimesNewRoman 15 bold')
+        text = tk.Label(self.root, text="ABC Software Solutions", height = 5, font = 'TimesNewRoman 15 bold')
         text.place(x=240,y=50)
 
 
@@ -243,12 +243,6 @@ class GUI(tk.Tk):
     #click_recognize = tk.Button(master=root, text='New Data',
      #                           bg='Yellow', command = newImage)
     #click_recognize.pack(side='top')
-
-# 0------------NOT REQUIRED ---- ADD LATER
-        # click_recognize = tk.Button(master=self.root, text='Exit',
-        #                         bg='Grey', fg = 'Black' ,
-        #                         command = EXIT)
-        # click_recognize.pack(side='bottom')
 
         self.root.mainloop()
 

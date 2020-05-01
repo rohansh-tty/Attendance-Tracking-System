@@ -239,11 +239,7 @@ class GUI(tk.Tk):
         click_recognize = tk.Button(master=self.root, text = 'Recognize Me', height = 3,
                                  bg='Lawn Green', fg = 'Black'  , command= recognizeMe)
         click_recognize.place(x=345, y=354)
-	    # NEW DATASET
-    #click_recognize = tk.Button(master=root, text='New Data',
-     #                           bg='Yellow', command = newImage)
-    #click_recognize.pack(side='top')
-
+	  
         self.root.mainloop()
 
 

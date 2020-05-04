@@ -15,7 +15,7 @@ checkoutTime = None
 x = None
 
 class sqliteObject():
-	DB_Location = "/database/location/Emp.db"
+	DB_Location = "/database/location/database_name.db"
 	def __init__ (self):
 		# tablename = 'sheetname'
 		# self.database = database

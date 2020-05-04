@@ -1,12 +1,12 @@
 '''This file contains a sqlite class which includes all the required methods for inserting, updating stuff.''' 
 
-# Load reqd libraries
+# Load required libraries
 import sqlite3
 import datetime
 
 # create a global variable for connectObject and crsr
 global connectObject 
-connectObject = sqlite3.connect('Emp.db')
+connectObject = sqlite3.connect('database_name.db')
 global crsr
 crsr = connectObject.cursor()
 

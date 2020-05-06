@@ -7,7 +7,7 @@ import cv2
 import os
 
 # grab the paths to the input images in our dataset
-print("[INFO] quantifying faces...")
+print("[INFO] Quantifying Faces...")
     
 # create an empty dict and list, to store encodings and images
 all_face_encodings = {}

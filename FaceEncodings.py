@@ -19,12 +19,10 @@ for filename in os.listdir('Dataset'):
         all_face_encodings[filename.split('.')[0]] = face_recognition.face_encodings(im)[0]
         images.append(im)
 
-    # image = cv2.imread(im,1)
     # convert the image frame to RGB from BGR(Inverse)
         rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
 # detect the (x, y)-coordinates of the bounding boxes
-# corresponding to each face in the input image
         boxes = face_recognition.face_locations(rgb)
 
 # compute the facial embedding for the face
@@ -34,7 +32,7 @@ for filename in os.listdir('Dataset'):
         for encoding in encodings:
             all_face_encodings[filename.split('.')[0]] = encoding
             images.append(im)
-    #print(all_face_encodings)
+    #
 
 
 # dump all the encodings and the images into a pickle

@@ -32,7 +32,6 @@ for filename in os.listdir('Dataset'):
         for encoding in encodings:
             all_face_encodings[filename.split('.')[0]] = encoding
             images.append(im)
-    #
 
 
 # dump all the encodings and the images into a pickle

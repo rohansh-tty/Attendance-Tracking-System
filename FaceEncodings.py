@@ -34,7 +34,7 @@ for filename in os.listdir('Dataset'):
             images.append(im)
 
 
-# dump all the encodings and the images into a pickle
+# dump all the encodings and images into a pickle
 with open('newfaceEncoding.pickle', 'wb') as f:
             pickle.dump(all_face_encodings, f)
 print('New Pickle file saved...')

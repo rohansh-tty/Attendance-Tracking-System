@@ -1,4 +1,4 @@
-# import the necessary packages
+# import necessary packages
 from imutils import paths
 import face_recognition
 import argparse

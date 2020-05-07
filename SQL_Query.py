@@ -23,7 +23,7 @@ class sqliteObject():
 		self.connect = sqlite3.connect(sqliteObject.DB_Location)
 		self.cursor = self.connect.cursor()
 		
-		# self.connect.execute("PRAGMA journal_mode=WAL") # to improve concurrency
+		# self.connect.execute("PRAGMA journal_mode=WAL") #to improve concurrency
 		self.connected = True
 
 
@@ -34,7 +34,7 @@ class sqliteObject():
                     NAME TEXT,
                     CHECKIN TIMESTAMP NULL,
 		    		CHECKOUT TIMESTAMP NULL,
-		    		PRIMARY KEY (DATE_, NAME))""") # this is to avoid multiple instance problem
+		    		PRIMARY KEY (DATE_, NAME))""")  # this is to avoid multiple instance problem
 		self.connect.commit()
 		# self.connect.close()
 
@@ -61,7 +61,7 @@ class sqliteObject():
 			self.connect()
 		else:
 			self.checkoutTime = str(datetime.datetime.now().hour) +':'+ str(datetime.datetime.now().minute)
-			args = (self.checkoutTime, self.name) # list up the data required \
+			args = (self.checkoutTime, self.name) # list up the data required 
 			arg1 = self.checkoutTime
 			
 			# No need to use try and except here. Use if you need it.	

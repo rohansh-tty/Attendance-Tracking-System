@@ -6,12 +6,15 @@ import pickle
 import cv2
 import os
 
+
 # grab the paths to the input images in our dataset
 print("[INFO] Quantifying Faces...")
-    
+
+
 # create an empty dict and list, to store encodings and images
 all_face_encodings = {}
 images = []
+
 
 # now loop over the directory and get the face_encodings of diff images
 for filename in os.listdir('Dataset'):
@@ -22,13 +25,13 @@ for filename in os.listdir('Dataset'):
     # convert the image frame to RGB from BGR(Inverse)
         rgb = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
 
-# detect the (x, y)-coordinates of the bounding boxes
+    # detect the (x, y)-coordinates of the bounding boxes
         boxes = face_recognition.face_locations(rgb)
 
-# compute the facial embedding for the face
+    # compute the facial embedding for the face
         encodings = face_recognition.face_encodings(rgb, boxes)
         
-# loop over the encodings
+    # loop over the encodings
         for encoding in encodings:
             all_face_encodings[filename.split('.')[0]] = encoding
             images.append(im)

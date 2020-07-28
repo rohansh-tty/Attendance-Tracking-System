@@ -24,7 +24,7 @@ oauthlib==3.1.0
 opencv-python==3.4.6.27
 opt-einsum==3.1.0
 picamera==1.13
-Pillow==7.0.0
+Pillow>=7.1.0
 protobuf==3.11.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
